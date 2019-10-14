@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection; 
+using Microsoft.Extensions.DependencyInjection;
+using HWRestaurant.Core;
+using HWRestaurant.Data;
 
 namespace HWRestaurant.Web
 {
@@ -31,6 +33,9 @@ namespace HWRestaurant.Web
             });
 
 
+            //services.AddRazorPage();
+            //services.Add
+            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

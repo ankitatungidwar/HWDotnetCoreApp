@@ -7,6 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/css/glyphicons.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -43,8 +44,13 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2019 - HWRestaurant.Web</p>
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                <p>
+                    @RenderSection("footer", required: false)
+                    &copy; 2019 - HWRestaurant.Web
+                </p>
+            </div>
         </footer>
     </div>
 
